@@ -1,4 +1,8 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -32,7 +36,10 @@ public class DriverCalculadora {
                 int opcion = scan.nextInt();
         
                 if(opcion == 1){
-                    System.out.println("El resultado es: " + calc.Calculo("6 2 3 + *"));
+                    String datos = "";
+                    datos = new String(Files.readAllBytes(Paths.get("datos.txt")));
+
+                    System.out.println("El resultado es: " + calc.Calculo(datos));
                 } else if (opcion == 2) {
                     System.out.println("Hasta luego!");
                     run = false;
@@ -45,7 +52,14 @@ public class DriverCalculadora {
             } catch (InputMismatchException e) {
                 System.err.println("Eligio una opcion incorrecta");
                 scan.nextLine();
+            } catch (NoSuchElementException e) {
+                System.err.println("La operacion ingresada es invalida, intente usar el formato correcto de notacion postfix");
+                scan.nextLine();
+            } catch (IOException e) {
+                System.out.println("No se logro detectar el archivo");
+                scan.nextLine();
             }
+            
 
 
         }
