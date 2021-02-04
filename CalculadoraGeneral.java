@@ -4,8 +4,13 @@
  * @author Andres de la Roca
  */
 
-public interface CalculadoraGeneral<T> {
+public interface CalculadoraGeneral {
     
-    public String Calculo(String texto);
+    /**
+     * Metodo que se encargara de correr el calculo en notacion postfix
+     * @param expresion
+     * @return
+     */
+    public String Calculo(String expresion);
 
 }

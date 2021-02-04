@@ -4,37 +4,37 @@
  * @author Andres de la Roca
  */
 
-public interface Stack<T> {
+public interface Stack<E> {
     
     /**
      * Permite almacenar dentro del stack un objeto
-     * @param num
-     * @return T
+     * @param data
+     * @return 
      */
-    public T Push(int num);
+    public void push(E data);
 
     /**
      * Permite sacar del stack el ultimo objeto que se ingreso
      * @return
      */
-    public T Pop();
+    public E pop();
 
     /**
      * Devuelve un valor true si el almacenamiento stack esta vacio y false si esta lleno
      * @return
      */
-    public boolean Empty();
+    public boolean empty();
 
     /**
      * Devuelve el ultimo objeto que se ingreso al stack
      * @return
      */
-    public T Peek();
+    public E peek();
 
     /**
      * Devuelve el tamaño del almacenamiento stack
      * @return
      */
-    public int Size();
+    public int size();
 
 }
