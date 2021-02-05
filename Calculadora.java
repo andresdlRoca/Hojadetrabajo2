@@ -12,7 +12,7 @@ public class Calculadora implements CalculadoraGeneral{
      * Este sera el almacenamiento que se utilizara para procesar el calculo
      */
 
-    public StackVector<String> stack = new StackVector<String>();
+    private StackVector<String> stack = new StackVector<String>();
 
     /**
      * Metodo que se encargara de correr el calculo en notacion postfix
