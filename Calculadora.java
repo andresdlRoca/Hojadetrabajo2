@@ -64,11 +64,9 @@ public class Calculadora implements CalculadoraGeneral{
                 num = Integer.toString(resultado);
                 
 
-            } 
-            System.out.println(num);
+            }
 
             stack.push(num);
-            System.out.println("Vueltas " + i);
         }
 
         return stack.pop();
